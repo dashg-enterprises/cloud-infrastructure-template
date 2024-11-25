@@ -11,8 +11,8 @@ terraform {
 
 module "environment_on_aws" {
   source = "git::https://github.com/dashg-enterprises/cloud-platform.git//modules/environment/aws?ref=main"
-  organization_name = "DashG"
-  domain_name = "dashglabs.com"
+  organization_name = local.organization_name
+  domain_name = local.domain_name
   bounded_contexts = local.bounded_contexts
   environment_name = var.environment_name
   environment_subdomain = var.environment_subdomain // e.g. 'www' for prod
