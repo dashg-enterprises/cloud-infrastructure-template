@@ -25,7 +25,7 @@ terraform {
 # }
 
 module "organization_on_azure" {
-  source = "git::https://github.com/dashg-enterprises/cloud-platform.git//modules/environment/azure?ref=main"
+  source = "git::https://github.com/dashg-enterprises/cloud-platform.git//modules/cloudscape/azure?ref=main"
   organization_name = var.organization_name
   environment_name = var.environment_name
 }
