@@ -12,6 +12,9 @@ terraform {
 locals {
   organization_name = "Put your git org name here"
   domain_name = "Put your domain here. example: mysite.com"
+  with_eks = true
+  with_api_gw = true
+  with_nat_gw = true
   bounded_contexts = []
 }
 
@@ -22,7 +25,7 @@ module "cloudscape_on_aws" {
   bounded_contexts = local.bounded_contexts
   environment_name = var.environment_name
   environment_subdomain = var.environment_subdomain // e.g. 'www' for prod
-  with_eks = true
-  with_api_gw = true
-  with_nat_gw = true
+  with_eks = local.with_eks
+  with_api_gw = local.with_api_gw
+  with_nat_gw = local.with_nat_gw
 }
