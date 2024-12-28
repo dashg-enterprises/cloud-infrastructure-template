@@ -15,7 +15,7 @@ locals {
   bounded_contexts = []
 }
 
-module "environment_on_aws" {
+module "cloudscape_on_aws" {
   source = "git::https://github.com/dashg-enterprises/cloud-platform.git//modules/cloudscape/aws?ref=main"
   organization_name = local.organization_name
   domain_name = local.domain_name
